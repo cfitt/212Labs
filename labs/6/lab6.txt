@@ -1,0 +1,47 @@
+1. In this B-Tree (O(3)) the numbers 1-10 are submitted:
+this ends up looking like this
+	        	  (5,-)
+		 	    |
+	  -----(3,-)<----------->(7,9)------
+    	  |                                |
+ (1,2)<------>(3,4)         (5,6)<------>(7,8)<------>(9,10)
+
+2. 1,2,3,4,5,6,7,8,9,10
+
+3. static prevents any changes to the data element when set.
+   It is notably used at the top BTreeNode, when it sets the 
+   Order of the Btree.
+
+4. virtual void is needed when one has multiple classes of the same base, to specify which base
+   function to use. in this case, virtual void dump(int depth) could be referring to the function 
+   in class BInternal, or Bleaf. It requires Polymorphism. 
+
+	In order to traverse through the tree correctly, a Btree needs to start at the top
+   and work it's way down which is the meaning of dump(int depth). It uses depth to determine how far to indent the tree, 
+   to which the top receives no indent, and leaves below receive "..." for each level.
+   
+5. if(elements<=MAX)
+	return NULL;
+
+this will return the insert(int item, int& newKey) method NULL, which ment it has exceeded the
+order set by the program's BTree. Thus, it requires a split/reorganize of the tree to insert
+the item given.
+
+6. It first checks each which root to go down (by evaluating if its less or greater than), and
+   also checks if another split is required (which it is) or it returns NULL and it is inserted
+   into the root. Then, it will find the position to where the item should be placed, and
+   shifts the tree over in order to insert. During this, if the insert exceeds the max order,
+   then a new internal is called to create another set of leaves, placing the two siblings inside
+   of the new set. It then returns this set of siblings.
+
+7. like if said in question 4, In order to traverse through the tree correctly, a Btree needs to start at the top
+   and work it's way down, which means it will start printing at the top first, where depth is
+   0, and add onto each node, whether they be parent, or siblings.
+
+8. For starters, this code was difficult to read just by the formatting, but that is 
+   generally preference to the writer. Other than this, it is difficult to recognize
+   algorithms required in a Btree, such as recognizing the max order within a set.
+
+
+
+

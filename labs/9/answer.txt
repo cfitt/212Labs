@@ -1,0 +1,30 @@
+
+Sorting Algs:
+
+
+1.Quick sort
+         Reasons:
+         -Completes in shorests amount of moves
+
+2.Insertion Sort
+        Reasons:
+         -Deals with a single element at a time
+         -inserts based on value for each elemnt making sure 
+	  it is less/greater than each one below
+
+3. Merge sort
+        Reasons:
+         -Seperates and then brings together groups.
+         -doesn't cross sides
+	
+
+4.Shell Sort
+        Reasons:
+         -Splits the set imediatly, very obvious when reversed
+         -The only aranges within split sets which is
+	   the h = n/2 part of algorithm
+
+5.Heap sort 
+         Reasons:
+         -varibles would move as far as 1 or two each turn
+		-this resembles mobvement from parent to child on a tree 
